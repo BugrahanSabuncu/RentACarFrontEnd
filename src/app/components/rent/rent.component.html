@@ -1,0 +1,30 @@
+<
+<div class="container">
+  <form [formGroup]="rentForm">
+    <ul class="list-group list-group-horizontal">
+      <li id="baslik" class="list-group-item">
+        <strong>Kiralama Bilgileri</strong>
+      </li>
+    </ul> 
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Alış Tarihi:</li>
+      <li class="list-group-item">
+        <input type="date" [min]="nowDate |date:'yyyy-MM-dd'" formControlName="rentalDate" required />
+      </li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Teslim Tarihi:</li>
+      <li class="list-group-item">
+        <input type="date" [min]="nowDate |date:'yyyy-MM-dd'" formControlName="returnDate"  required/>
+      </li>
+    </ul>
+    <ul class="list-group list-group-horizontal">
+      <li class="list-group-item">Ödeme işleminizi tamamlayın</li>
+      <li class="list-group-item">
+        <button (click)="addCart()" routerLink="/payment" type="button" class="btn btn-dark" >
+          Ödeme Yap
+        </button>
+      </li>
+    </ul>
+  </form>
+</div>

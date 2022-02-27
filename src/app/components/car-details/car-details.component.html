@@ -1,0 +1,63 @@
+<!-- <div class="card-group">
+  <div class="card" *ngFor="let carImage of carImages">
+    <img [src]="url + carImage.imagePath" > 
+    <div class="card-body">
+
+  </div>
+</div> -->
+<div class="row">
+  <div id="AnaBaslik" class="col-md-9"><h3>Rent A Car Demo </h3></div>
+  <div class="col-md-3">
+    <button type="button" *ngIf="car" routerLink="/rent/{{car.carId}}" class="btn btn-outline-primary">Hemen Kirala</button>
+  </div>
+
+</div>
+<div class="row">  
+  <div class="col-md-8">
+
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngIf="carImages" class="carousel-item active">
+          <img [src]="url+carImages[0].imagePath" class="d-block w-100" alt="...">
+        </div>
+        <div *ngFor="let carImage of carImages" class="carousel-item">
+          <img *ngIf="carImages" [src]="url+carImage.imagePath" class="d-block w-100" alt="...">
+        </div>
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <ul *ngIf="car" class="list-group">
+      <li class="list-group-item list-group-item-dark">Marka</li>
+      <li class="list-group-item">{{car.brandName}}</li>
+      <li class="list-group-item list-group-item-dark">Model</li>
+      <li class="list-group-item">{{car.modelYear}}</li>
+      <li class="list-group-item list-group-item-dark">Renk</li>
+      <li class="list-group-item">{{car.colorName}}</li>
+      <li class="list-group-item list-group-item-dark">Günlük Fiyat</li>
+      <li class="list-group-item">{{car.dailyPrice}} </li>
+      <li class="list-group-item list-group-item-dark">Açıklama</li>
+      <li class="list-group-item">{{car.description}}</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="row">
+  <h6 id="baslik">Ek Özellikler</h6>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><b>Yakıt Tipi: </b>Benzin</li>
+    <li class="list-group-item"><b>Motor Gücü : </b>85 hp</li>
+    <li class="list-group-item"></li>
+  </ul>
+</div>
+
