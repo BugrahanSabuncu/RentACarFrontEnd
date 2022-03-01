@@ -35,6 +35,7 @@ export class UserLoginComponent implements OnInit {
           this.toastrService.success("Giriş Başarılı")
           localStorage.setItem("token",responce.data.token)
           //console.log(responce);
+          console.log(this.authService.getUser())
         },
         (errorResponce) => {
           this.toastrService.error(errorResponce.error)
@@ -42,5 +43,6 @@ export class UserLoginComponent implements OnInit {
         }
       );
     }
+    
   }
 }

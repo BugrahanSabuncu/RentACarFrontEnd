@@ -57,13 +57,13 @@ export class RentComponent implements OnInit {
       this.rentalService.addToCart(rentItem)
     }else if(this.rent.data.returnDate < rentItem.returnDate){
       this.rentalService.addToCart(rentItem)
-      console.log("Backend : "+this.rent.data.returnDate)
-      console.log("Frontend : "+rentItem.returnDate)
+      // console.log("Backend : "+this.rent.data.returnDate)
+      // console.log("Frontend : "+rentItem.returnDate)
     }
     else{
       this.toastrService.error("Seçtiğiniz tarihlerde bu araç uygun değil.")
-      console.log("Backend : "+this.rent.data.returnDate)
-      console.log("Frontend : "+rentItem.returnDate)
+      // console.log("Backend : "+this.rent.data.returnDate)
+      // console.log("Frontend : "+rentItem.returnDate)
     }  
 
   }

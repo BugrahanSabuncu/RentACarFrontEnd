@@ -23,6 +23,8 @@ import { RentComponent } from './components/rent/rent.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { JwtHelperService,JWT_OPTIONS } from '@auth0/angular-jwt';
+
 
 
 @NgModule({
@@ -40,7 +42,7 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
     RentComponent,
     PaymentComponent,
     AdminComponent,
-    BrandAddComponent,
+    BrandAddComponent,    
   ],
   imports: [
     BrowserModule,
@@ -51,9 +53,14 @@ import { BrandAddComponent } from './components/brand-add/brand-add.component';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+
   ],
-  providers: [],
+  providers: [
+    {provide: JWT_OPTIONS, useValue:JWT_OPTIONS},
+    JwtHelperService
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
